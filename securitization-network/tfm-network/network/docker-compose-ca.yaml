@@ -1,0 +1,92 @@
+version: '2'
+
+networks:
+   securitization:
+
+services:
+
+   rootca.originator.securitization.com:
+      container_name: rootca.originator.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "7055:7055"
+      volumes:
+         - ./fabric-ca/originator/fabric-ca-server-originator:/etc/hyperledger/originator/fabric-ca-server-originator
+        #  - ./fabric-ca/originator/ca:/etc/hyperledger/fabric-ca-server
+        #  - ./fabric-ca/originator/tls-ca/rcaadmin/msp/signcerts:/etc/hyperledger/tls-ca/rcaadmin/msp/signcerts
+        #  - ./fabric-ca/originator/tls-ca/rcaadmin/msp/keystore:/etc/hyperledger/tls-ca/rcaadmin/msp/keystore      
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/originator/fabric-ca-server-originator
+        #  - FABRIC_CA_SERVER_TLS_ENABLED=true
+         # - FABRIC_CA_SERVER_CSR_HOSTS= localhost
+        #  - FABRIC_CA_SERVER_TLS_CERTFILE=/etc/hyperledger/tls-ca/rcaadmin/msp/signcerts/cert.pem
+        #  - FABRIC_CA_SERVER_TLS_KEYFILE=/etc/hyperledger/tls-ca/rcaadmin/msp/keystore/
+      command: >
+         sh -c "fabric-ca-server init -b rcaadmin:rcaadminpw"
+      networks:
+         - securitization
+
+   rootca.farmer.securitization.com:
+      container_name: rootca.farmer.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "8055:7055"
+      volumes:
+         - ./fabric-ca/farmer/fabric-ca-server-farmer:/etc/hyperledger/farmer/fabric-ca-server-farmer
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/farmer/fabric-ca-server-farmer
+         # - FABRIC_CA_SERVER_CSR_HOSTS= localhost
+        #  - FABRIC_CA_SERVER_CA_NAME= rootca-farmer
+      command: >
+         sh -c "fabric-ca-server init -b rcaadmin:rcaadminpw"
+      networks:
+         - securitization
+
+   rootca.ratingagency.securitization.com:
+      container_name: rootca.ratingagency.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "9055:7055"
+      volumes:
+         - ./fabric-ca/ratingagency/fabric-ca-server-ratingagency:/etc/hyperledger/ratingagency/fabric-ca-server-ratingagency
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/ratingagency/fabric-ca-server-ratingagency
+         # - FABRIC_CA_SERVER_CSR_HOSTS= localhost
+        #  - FABRIC_CA_SERVER_CA_NAME= rootca-ratingagency
+      command: >
+         sh -c "fabric-ca-server init -b rcaadmin:rcaadminpw"
+      networks:
+         - securitization
+
+   rootca.spv.securitization.com:
+      container_name: rootca.spv.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "10055:7055"
+      volumes:
+         - ./fabric-ca/spv/fabric-ca-server-spv:/etc/hyperledger/spv/fabric-ca-server-spv
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/spv/fabric-ca-server-spv
+         # - FABRIC_CA_SERVER_CSR_HOSTS= localhost
+        #  - FABRIC_CA_SERVER_CA_NAME= rootca-spv
+      command: >
+         sh -c "fabric-ca-server init -b rcaadmin:rcaadminpw"
+      networks:
+         - securitization
+
+   rootca.investor.securitization.com:
+      container_name: rootca.investor.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "11055:7055"
+      volumes:
+         - ./fabric-ca/investor/fabric-ca-server-investor:/etc/hyperledger/investor/fabric-ca-server-investor
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/investor/fabric-ca-server-investor
+         # - FABRIC_CA_SERVER_CSR_HOSTS= localhost
+        #  - FABRIC_CA_SERVER_CA_NAME= rootca-investor
+      command: >
+         sh -c "fabric-ca-server init -b rcaadmin:rcaadminpw"
+      networks:
+         - securitization
+

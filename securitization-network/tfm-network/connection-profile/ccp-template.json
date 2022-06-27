@@ -1,0 +1,270 @@
+{
+    "name": "securitization-network-originator",
+    "version": "1.0.0",
+    "client": {
+        "tlsEnable": false,
+        "organization": "${ORGANIZATION}",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "securitization": {
+            "peers": {
+                "peer.originator.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.farmer.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.ratingagency.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.spv.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.investor.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                }
+            }
+        }
+    },
+    "organizations": {
+        "originator": {
+            "mspid": "originatorMSP",
+            "peers": [
+                "peer.originator.securitization.com"
+            ],
+            "orderers": [
+                "orderer.originator.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.originator.securitization.com"
+            ]
+        },
+        "farmer": {
+            "mspid": "farmerMSP",
+            "peers": [
+                "peer.farmer.securitization.com"
+            ],
+            "orderers": [
+                "orderer.farmer.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.farmer.securitization.com"
+            ]
+        },
+        "ratingagency": {
+            "mspid": "ratingagencyMSP",
+            "peers": [
+                "peer.ratingagency.securitization.com"
+            ],
+            "orderers": [
+                "orderer.ratingagency.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.ratingagency.securitization.com"
+            ]
+        },
+        "spv": {
+            "mspid": "spvMSP",
+            "peers": [
+                "peer.spv.securitization.com"
+            ],
+            "orderers": [
+                "orderer.spv.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.spv.securitization.com"
+            ]
+        },
+        "investor": {
+            "mspid": "investorMSP",
+            "peers": [
+                "peer.investor.securitization.com"
+            ],
+            "orderers": [
+                "orderer.investor.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.investor.securitization.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer.originator.securitization.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "${PEER1PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.originator.securitization.com",
+                "hostnameOverride": "peer.originator.securitization.com"
+            }
+        },
+        "peer.farmer.securitization.com": {
+            "url": "grpcs://localhost:8051",
+            "tlsCACerts": {
+                "pem": "${PEER2PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.farmer.securitization.com",
+                "hostnameOverride": "peer.farmer.securitization.com"
+            }
+        },
+        "peer.ratingagency.securitization.com": {
+            "url": "grpcs://localhost:9051",
+            "tlsCACerts": {
+                "pem": "${PEER3PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.ratingagency.securitization.com",
+                "hostnameOverride": "peer.ratingagency.securitization.com"
+            }
+        },
+        "peer.spv.securitization.com": {
+            "url": "grpcs://localhost:10051",
+            "tlsCACerts": {
+                "pem": "${PEER4PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.spv.securitization.com",
+                "hostnameOverride": "peer.spv.securitization.com"
+            }
+        },
+        "peer.investor.securitization.com": {
+            "url": "grpcs://localhost:11051",
+            "tlsCACerts": {
+                "pem": "${PEER5PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.investor.securitization.com",
+                "hostnameOverride": "peer.investor.securitization.com"
+            }
+        }
+    },
+    "orderers": {
+        "orderer.originator.securitization.com": {
+            "url": "grpcs://localhost:7050",
+            "tlsCACerts": {
+                "pem": "${ORDERER1PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.originator.securitization.com",
+                "hostnameOverride": "orderer.originator.securitization.com"
+            }
+        },
+        "orderer.farmer.securitization.com": {
+            "url": "grpcs://localhost:8050",
+            "tlsCACerts": {
+                "pem": "${ORDERER2PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.farmer.securitization.com",
+                "hostnameOverride": "orderer.farmer.securitization.com"
+            }
+        },
+        "orderer.ratingagency.securitization.com": {
+            "url": "grpcs://localhost:9050",
+            "tlsCACerts": {
+                "pem": "${ORDERER3PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.ratingagency.securitization.com",
+                "hostnameOverride": "orderer.ratingagency.securitization.com"
+            }
+        },
+        "orderer.spv.securitization.com": {
+            "url": "grpcs://localhost:10050",
+            "tlsCACerts": {
+                "pem": "${ORDERER4PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.spv.securitization.com",
+                "hostnameOverride": "orderer.spv.securitization.com"
+            }
+        },
+        "orderer.investor.securitization.com": {
+            "url": "grpcs://localhost:11050",
+            "tlsCACerts": {
+                "pem": "${ORDERER5PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.investor.securitization.com",
+                "hostnameOverride": "orderer.investor.securitization.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "rootca.originator.securitization.com": {
+            "url": "https://localhost:7055",
+            "caName": "rootca.originator.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA1PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.farmer.securitization.com": {
+            "url": "https://localhost:8055",
+            "caName": "rootca.farmer.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA2PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.ratingagency.securitization.com": {
+            "url": "https://localhost:9055",
+            "caName": "rootca.ratingagency.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA3PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.spv.securitization.com": {
+            "url": "https://localhost:10055",
+            "caName": "rootca.spv.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA4PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.investor.securitization.com": {
+            "url": "https://localhost:11055",
+            "caName": "rootca.investor.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA5PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}

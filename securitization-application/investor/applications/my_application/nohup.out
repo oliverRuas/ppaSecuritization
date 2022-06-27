@@ -1,0 +1,112 @@
+wallet path: /home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/APPandUI/wallet/user@investor
+Connect to a Hyperledger Fabric gateway.
+2022-02-03T15:48:58.786Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Endorser- name: peer.originator.securitization.com, url:grpcs://localhost:7051, connected:false, connectAttempted:true
+2022-02-03T15:48:58.787Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server peer.originator.securitization.com url:grpcs://localhost:7051 timeout:3000
+2022-02-03T15:48:58.792Z - [32minfo[39m: [NetworkConfig]: buildPeer - Unable to connect to the endorser peer.originator.securitization.com due to Error: Failed to connect before the deadline on Endorser- name: peer.originator.securitization.com, url:grpcs://localhost:7051, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:01.796Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Endorser- name: peer.farmer.securitization.com, url:grpcs://localhost:8051, connected:false, connectAttempted:true
+2022-02-03T15:49:01.796Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server peer.farmer.securitization.com url:grpcs://localhost:8051 timeout:3000
+2022-02-03T15:49:01.797Z - [32minfo[39m: [NetworkConfig]: buildPeer - Unable to connect to the endorser peer.farmer.securitization.com due to Error: Failed to connect before the deadline on Endorser- name: peer.farmer.securitization.com, url:grpcs://localhost:8051, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:04.800Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Endorser- name: peer.ratingagency.securitization.com, url:grpcs://localhost:9051, connected:false, connectAttempted:true
+2022-02-03T15:49:04.801Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server peer.ratingagency.securitization.com url:grpcs://localhost:9051 timeout:3000
+2022-02-03T15:49:04.804Z - [32minfo[39m: [NetworkConfig]: buildPeer - Unable to connect to the endorser peer.ratingagency.securitization.com due to Error: Failed to connect before the deadline on Endorser- name: peer.ratingagency.securitization.com, url:grpcs://localhost:9051, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:07.809Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Endorser- name: peer.spv.securitization.com, url:grpcs://localhost:10051, connected:false, connectAttempted:true
+2022-02-03T15:49:07.809Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server peer.spv.securitization.com url:grpcs://localhost:10051 timeout:3000
+2022-02-03T15:49:07.810Z - [32minfo[39m: [NetworkConfig]: buildPeer - Unable to connect to the endorser peer.spv.securitization.com due to Error: Failed to connect before the deadline on Endorser- name: peer.spv.securitization.com, url:grpcs://localhost:10051, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:10.813Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Endorser- name: peer.investor.securitization.com, url:grpcs://localhost:11051, connected:false, connectAttempted:true
+2022-02-03T15:49:10.814Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server peer.investor.securitization.com url:grpcs://localhost:11051 timeout:3000
+2022-02-03T15:49:10.815Z - [32minfo[39m: [NetworkConfig]: buildPeer - Unable to connect to the endorser peer.investor.securitization.com due to Error: Failed to connect before the deadline on Endorser- name: peer.investor.securitization.com, url:grpcs://localhost:11051, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:13.824Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Committer- name: orderer.originator.securitization.com, url:grpcs://localhost:7050, connected:false, connectAttempted:true
+2022-02-03T15:49:13.825Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server orderer.originator.securitization.com url:grpcs://localhost:7050 timeout:3000
+2022-02-03T15:49:13.826Z - [32minfo[39m: [NetworkConfig]: buildOrderer - Unable to connect to the committer orderer.originator.securitization.com due to Error: Failed to connect before the deadline on Committer- name: orderer.originator.securitization.com, url:grpcs://localhost:7050, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:16.829Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Committer- name: orderer.farmer.securitization.com, url:grpcs://localhost:8050, connected:false, connectAttempted:true
+2022-02-03T15:49:16.830Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server orderer.farmer.securitization.com url:grpcs://localhost:8050 timeout:3000
+2022-02-03T15:49:16.832Z - [32minfo[39m: [NetworkConfig]: buildOrderer - Unable to connect to the committer orderer.farmer.securitization.com due to Error: Failed to connect before the deadline on Committer- name: orderer.farmer.securitization.com, url:grpcs://localhost:8050, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:19.837Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Committer- name: orderer.ratingagency.securitization.com, url:grpcs://localhost:9050, connected:false, connectAttempted:true
+2022-02-03T15:49:19.838Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server orderer.ratingagency.securitization.com url:grpcs://localhost:9050 timeout:3000
+2022-02-03T15:49:19.839Z - [32minfo[39m: [NetworkConfig]: buildOrderer - Unable to connect to the committer orderer.ratingagency.securitization.com due to Error: Failed to connect before the deadline on Committer- name: orderer.ratingagency.securitization.com, url:grpcs://localhost:9050, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:22.844Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Committer- name: orderer.spv.securitization.com, url:grpcs://localhost:10050, connected:false, connectAttempted:true
+2022-02-03T15:49:22.844Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server orderer.spv.securitization.com url:grpcs://localhost:10050 timeout:3000
+2022-02-03T15:49:22.845Z - [32minfo[39m: [NetworkConfig]: buildOrderer - Unable to connect to the committer orderer.spv.securitization.com due to Error: Failed to connect before the deadline on Committer- name: orderer.spv.securitization.com, url:grpcs://localhost:10050, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+2022-02-03T15:49:25.847Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Committer- name: orderer.investor.securitization.com, url:grpcs://localhost:11050, connected:false, connectAttempted:true
+2022-02-03T15:49:25.847Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server orderer.investor.securitization.com url:grpcs://localhost:11050 timeout:3000
+2022-02-03T15:49:25.849Z - [32minfo[39m: [NetworkConfig]: buildOrderer - Unable to connect to the committer orderer.investor.securitization.com due to Error: Failed to connect before the deadline on Committer- name: orderer.investor.securitization.com, url:grpcs://localhost:11050, connected:false, connectAttempted:true
+    at checkState (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/client.js:74:26)
+    at Timeout._onTimeout (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/@grpc/grpc-js/build/src/channel.js:479:17)
+    at listOnTimeout (node:internal/timers:557:17)
+    at processTimers (node:internal/timers:500:7) {
+  connectFailed: true
+}
+Use channel securitization.
+2022-02-03T15:49:28.888Z - [31merror[39m: [ServiceEndpoint]: Error: Failed to connect before the deadline on Discoverer- name: peer.investor.securitization.com, url:grpcs://localhost:11051, connected:false, connectAttempted:true
+2022-02-03T15:49:28.889Z - [31merror[39m: [ServiceEndpoint]: waitForReady - Failed to connect to remote gRPC server peer.investor.securitization.com url:grpcs://localhost:11051 timeout:3000
+2022-02-03T15:49:28.889Z - [31merror[39m: [ServiceEndpoint]: ServiceEndpoint grpcs://localhost:11051 reset connection failed :: Error: Failed to connect before the deadline on Discoverer- name: peer.investor.securitization.com, url:grpcs://localhost:11051, connected:false, connectAttempted:true
+2022-02-03T15:49:28.889Z - [31merror[39m: [DiscoveryService]: send[securitization] - no discovery results
+User enrollment exception.
+Error: DiscoveryService has failed to return results
+    at DiscoveryService.send (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-common/lib/DiscoveryService.js:370:10)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async NetworkImpl._initializeInternalChannel (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-network/lib/network.js:281:13)
+    at async NetworkImpl._initialize (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-network/lib/network.js:231:9)
+    at async Gateway.getNetwork (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-network/lib/gateway.js:331:9)
+    at async main (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/listener.js:37:21)
+Error: DiscoveryService has failed to return results
+    at DiscoveryService.send (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-common/lib/DiscoveryService.js:370:10)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+    at async NetworkImpl._initializeInternalChannel (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-network/lib/network.js:281:13)
+    at async NetworkImpl._initialize (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-network/lib/network.js:231:9)
+    at async Gateway.getNetwork (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/node_modules/fabric-network/lib/gateway.js:331:9)
+    at async main (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/investor/applications/my_application/listener.js:37:21)

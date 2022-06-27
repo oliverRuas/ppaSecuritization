@@ -1,0 +1,53 @@
+wallet path: /home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/APPandUI/wallet/user@originator
+Connect to a Hyperledger Fabric gateway.
+Use channel securitization.
+Use SimpleContract.
+ppaID: undefined
+Error processing transaction. ReferenceError: functionName is not defined
+ReferenceError: functionName is not defined
+    at main (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/listener.js:60:33)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Disconnect from the gateway.
+User enrollment completed successfully.
+wallet path: /home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/APPandUI/wallet/user@originator
+Connect to a Hyperledger Fabric gateway.
+Use channel securitization.
+Use SimpleContract.
+ppaID: undefined
+Submit MintPPA transaction.
+Error processing transaction. TypeError: Cannot read properties of undefined (reading 'toString')
+TypeError: Cannot read properties of undefined (reading 'toString')
+    at Endorsement.build (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/node_modules/fabric-common/lib/Proposal.js:249:35)
+    at Transaction.submit (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/node_modules/fabric-network/lib/transaction.js:198:21)
+    at main (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/listener.js:61:35)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Disconnect from the gateway.
+User enrollment completed successfully.
+wallet path: /home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/APPandUI/wallet/user@originator
+Connect to a Hyperledger Fabric gateway.
+Use channel securitization.
+Use SimpleContract.
+ppaID: undefined
+Submit MintPPA transaction.
+Error processing transaction. TypeError: Cannot read properties of undefined (reading 'toString')
+TypeError: Cannot read properties of undefined (reading 'toString')
+    at Endorsement.build (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/node_modules/fabric-common/lib/Proposal.js:249:35)
+    at Transaction.submit (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/node_modules/fabric-network/lib/transaction.js:198:21)
+    at main (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/listener.js:61:35)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Disconnect from the gateway.
+User enrollment completed successfully.
+wallet path: /home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/APPandUI/wallet/user@originator
+Connect to a Hyperledger Fabric gateway.
+Use channel securitization.
+Use SimpleContract.
+ppaID: undefined
+Submit MintPPA transaction.
+Error processing transaction. TypeError: Cannot read properties of undefined (reading 'toString')
+TypeError: Cannot read properties of undefined (reading 'toString')
+    at Endorsement.build (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/node_modules/fabric-common/lib/Proposal.js:249:35)
+    at Transaction.submit (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/node_modules/fabric-network/lib/transaction.js:198:21)
+    at main (/home/oliver/go/src/github.com/hyperledger/fabric-samples/securitization-application/originator/applications/my_application/listener.js:61:18)
+    at processTicksAndRejections (node:internal/process/task_queues:96:5)
+Disconnect from the gateway.
+User enrollment completed successfully.

@@ -1,0 +1,76 @@
+version: '2'
+
+networks:
+   securitization:
+
+services:
+   tls.ca.originator.securitization.com:
+      container_name: tls.ca.originator.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "7054:7054"
+      volumes:
+         - ./fabric-ca/originator/fabric-ca-server-tls:/etc/hyperledger/originator/fabric-ca-server-tls
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/originator/fabric-ca-server-tls
+      command: >
+         sh -c "fabric-ca-server start"
+      networks:
+         - securitization
+
+   tls.ca.farmer.securitization.com:
+      container_name: tls.ca.farmer.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "8054:7054"
+      volumes:
+         - ./fabric-ca/farmer/fabric-ca-server-tls:/etc/hyperledger/farmer/fabric-ca-server-tls
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/farmer/fabric-ca-server-tls
+      command: >
+         sh -c "fabric-ca-server start"
+      networks:
+         - securitization
+
+   tls.ca.ratingagency.securitization.com:
+      container_name: tls.ca.ratingagency.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "9054:7054"
+      volumes:
+         - ./fabric-ca/ratingagency/fabric-ca-server-tls:/etc/hyperledger/ratingagency/fabric-ca-server-tls
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/ratingagency/fabric-ca-server-tls
+      command: >
+         sh -c "fabric-ca-server start"
+      networks:
+         - securitization
+
+   tls.ca.spv.securitization.com:
+      container_name: tls.ca.spv.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "10054:7054"
+      volumes:
+         - ./fabric-ca/spv/fabric-ca-server-tls:/etc/hyperledger/spv/fabric-ca-server-tls
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/spv/fabric-ca-server-tls
+      command: >
+         sh -c "fabric-ca-server start"
+      networks:
+         - securitization
+
+   tls.ca.investor.securitization.com:
+      container_name: tls.ca.investor.securitization.com
+      image: hyperledger/fabric-ca:1.4.9
+      ports:
+         - "11054:7054"
+      volumes:
+         - ./fabric-ca/investor/fabric-ca-server-tls:/etc/hyperledger/investor/fabric-ca-server-tls
+      environment:
+         - FABRIC_CA_SERVER_HOME=/etc/hyperledger/investor/fabric-ca-server-tls
+      command: > 
+         sh -c "fabric-ca-server start"
+      networks:
+         - securitization
+

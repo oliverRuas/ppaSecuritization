@@ -1,0 +1,35 @@
+---
+name: securitization-network-${ORG}
+version: 1.0.0
+client:
+  organization: ${ORG}
+  connection:
+    timeout:
+      peer:
+        endorser: '300'
+organizations:
+  ${ORG}:
+    mspid: ${ORG}MSP
+    peers:
+    - ${ORG}-peer
+    certificateAuthorities:
+    - rootca-${ORG}
+peers:
+  ${ORG}-peer:
+    url: grpcs://localhost:${P0PORT}
+    tlsCACerts:
+      pem: |
+          ${PEERPEM}
+    grpcOptions:
+      ssl-target-name-override: ${ORG}-peer
+      hostnameOverride: ${ORG}-peer
+certificateAuthorities:
+  rootca-${ORG}:
+    url: https://localhost:${CAPORT}
+    caName: 
+    tlsCACerts:
+      pem: 
+        - |
+          ${CAPEM}
+    httpOptions:
+      verify: false

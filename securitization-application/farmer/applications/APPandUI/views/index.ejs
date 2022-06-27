@@ -1,0 +1,348 @@
+
+<!--O'Reilly - Accelerated Hands-on Smart Contract Development with Hyperledger Fabric V2
+ # farma ledger supply chain network
+ # Author: Brian Wu
+ # load application page
+-->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Securitization</title>
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link type="text/css" href="/css/style.css" rel="stylesheet">
+    <script src="/js/plnClient.js"></script>
+  </head>
+<body>
+  <nav class="navbar navbar-light navbar-light" style="background-color: #343a40;margin-top: -3px;">
+    <span class="navbar-brand text-white">User Interface for Securitization</span>
+  </nav>
+  <nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div id="sidebar-wrapper" class="sidebar-toggle">
+		    <ul class="sidebar-nav">
+          <li id="enrollUserLink" class="nav-menu">
+            <a id="menu1" href="#enrollUser"><i class="fa fa-user menuIcon"></i>Enroll User</a>
+          </li>
+          <li id="monthlyBillLink" class="nav-menu">
+            <a id="menu2" href="#monthlyBill"><i class="fa fa-university menuIcon"></i>MonthlyBill</a>
+          </li>
+		    	<li id="acceptPPALink" class="nav-menu">
+		           <a id="menu2" href="#acceptPPA"><i class="fa fa-university menuIcon"></i>AcceptPPA</a>
+		    	</li>
+          <li id="requestPPALink" class="nav-menu">
+            <a id="menu2" href="#requestPPA"><i class="fa fa-university menuIcon"></i>RequestPPA</a>
+         </li>
+          <li id="maintenanceServiceRequestLink" class="nav-menu">
+            <a id="menu2" href="#maintenanceServiceRequest"><i class="fa fa-university menuIcon"></i>Maintenance Request</a>
+          </li>
+          <li id="poolAssetsLink" class="nav-menu">
+            <a id="menu2" href="#poolAssets"><i class="fa fa-university menuIcon"></i>PoolAssets</a>
+          </li>
+		    	<li id="querySecuritizationCoinsLink" class="nav-menu">
+            <a id="menu3" href="#querySecuritizationCoins"><i class="fa fa-search menuIcon"></i>QueryCoins</a>
+          </li>
+          <li id="queryPPAHistoryLink" class="nav-menu">
+               <a id="menu3" href="#queryPPAHistory"><i class="fa fa fa-history menuIcon"></i>Query PPA History</a>
+          </li>
+		   </ul>
+		</div>
+  	</div>
+</nav>
+<!-- tab content -->
+<div class="tab-content page-content">
+  <!-- enrollUser --->
+  <div class="tab-pane text-style" id="enrollUserTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Enroll User</h4>
+    </div>
+      <form>
+        <div class="form-group row">
+          <label for="enrollmentUser" class="col-sm-2 col-form-label">Enrollment User</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentUser" placeholder="Enrollment User">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="enrollmentIdentity" class="col-sm-2 col-form-label">Enrollment Identity</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentIdentity" placeholder="Enrollment Identity">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="enrollmentSecret" class="col-sm-2 col-form-label">Enrollment Secret</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentSecret" placeholder="Enrollment Secret">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="enrollmentUserCIF" class="col-sm-2 col-form-label">User CIF</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentUserCIF" placeholder="User CIF">
+          </div>
+        </div>       
+        <div class="form-group row">
+          <label for="enrollmentUserEmail" class="col-sm-2 col-form-label">User Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentUserEmail" placeholder="User Email">
+          </div>
+        </div>
+        <button type="submit" id="enrollUser" class="btn btn-success mb-2">Enroll</button>
+      </form>
+      <hr>
+  </div>
+
+  
+  <!-- monthlyBill --->
+  <div class="tab-pane text-style" id="monthlyBillTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Electricity Bill Payment</h4>
+    </div>
+      <form>
+        <div class="form-group row">
+          <label for="billUser" class="col-sm-2 col-form-label">Identity Label</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="billUser" placeholder="userID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="ppaID" class="col-sm-2 col-form-label">PPA ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="ppaID" placeholder="ppaID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="tokenID" class="col-sm-2 col-form-label">Token ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="tokenID" placeholder="tokenID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="monthlybilltypeID" class="col-sm-2 col-form-label">Token Type ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="monthlybilltypeID" placeholder="typeID">
+          </div>
+        </div>       
+        <button type="submit" id="monthlyBill" class="btn btn-success mb-2">Submit</button>
+      </form>
+      <hr>
+  </div>
+
+  <!-- requestPPA --->
+  <div class="tab-pane text-style" id="requestPPATab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Request PPA</h4>
+    </div>
+  <form>
+      <div class="form-group row">
+        <label for="requestUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="requestUser" placeholder="user">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="landID" class="col-sm-2 col-form-label">Land ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="landID" placeholder="landID">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="crops" class="col-sm-2 col-form-label">Crops</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="crops" placeholder="crops">
+        </div>
+      </div>
+    <button id="requestPPA"  type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <hr>
+  </div>
+
+
+  <!-- maintenanceServiceRequest --->
+  <div class="tab-pane text-style" id="maintenanceServiceRequestTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Maintenance Service Request</h4>
+    </div>
+  <form>
+      <div class="form-group row">
+        <label for="maintenanceServiceRequestUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="maintenanceServiceRequestUser" placeholder="user@organization">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="maintenanceServiceRequestPPAID" class="col-sm-2 col-form-label">PPA ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="maintenanceServiceRequestPPAID" placeholder="ppaID">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="maintenanceServiceRequestType" class="col-sm-2 col-form-label">Service Type</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="maintenanceServiceRequestType" placeholder="serviceType">
+        </div>
+      </div>
+    <button id="maintenanceServiceRequest"  type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <hr>
+  </div>
+  
+
+
+  <!-- acceptPPA --->
+  <div class="tab-pane text-style" id="acceptPPATab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Accept PPA</h4>
+    </div>
+  <form>
+      <div class="form-group row">
+        <label for="acceptUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="acceptUser" placeholder="userID">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="acceptppaID" class="col-sm-2 col-form-label">PPA ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="acceptppaID" placeholder="PPA ID">
+        </div>
+      </div>
+    <button id="acceptPPA"  type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <hr>
+  </div>
+
+
+  <!-- poolAssets --->
+  <div class="tab-pane text-style" id="poolAssetsTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Pool Assets </h4>
+    </div>
+  <form>
+      <div class="form-group row">
+        <label for="poolUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="poolUser" placeholder="username">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="poolAssetType" class="col-sm-2 col-form-label">Asset Type</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="poolAssetType" placeholder=" Money/Bond">
+        </div>
+      </div>
+    <button id="poolAssets"  type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <hr>
+  </div>
+
+
+
+  <!-- querySecuritizationCoins --->
+  <div class="tab-pane text-style" id="querySecuritizationCoinsTab">
+      <div class="alert alert-primary" role="alert">
+          <h4>Query Coins</h4>
+      </div>
+      <form>
+        <div class="form-group">
+      <input type="text" class="form-control" id="coinUser" placeholder="Enter Identity Label">
+        </div>
+        <button id="querySecuritizationCoins" type="submit" class="btn btn-success">Query Coins</button>
+    </form>
+      <hr>
+      <div id="queryCoinResult">
+          <h4 class="display-5 text-center">Query Result</h4>
+          <table class="table table-striped table-sm">
+            <thead>
+               <tr>
+                 <th scope="col">ID</th>
+                 <th scope="col">TypeID</th>
+                 <th scope="col">Amount (Factor=100)</th>
+                 <th scope="col">CanBeUsed</th>
+                 <!-- <th scope="col">Name</th> -->
+                 <!-- <th scope="col">Owner</th>
+                 <th scope="col">Previous Owner Type</th>
+                 <th scope="col">Current Owner Type</th>
+                 <th scope="col">Eqipment Created Date</th>
+                 <th scope="col">Last Updated Date</th> -->
+               </tr>
+             </thead>
+             <tbody id="tableCoinbody">
+            </tbody>
+          </table>
+      </div>
+      <div id="queryCoinResultEmpty">
+          <h3 class="display-4 text-center">Not record found</h3>
+      </div>
+  </div>
+
+
+
+  <!-- queryPPAHistory --->
+  <div class="tab-pane text-style" id="queryPPAHistoryTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Query PPA History</h4>
+    </div>
+    <form>
+      <div class="form-group row">
+        <label for="ppaHistoryUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ppaHistoryUser" placeholder="Identity Label">
+          </div>
+        </div>
+      <div class="form-group row">
+        <label for="ppaHistoryUserDNI" class="col-sm-2 col-form-label">Irrigator ID</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ppaHistoryUserDNI" placeholder="IrrigatorID">
+          </div>
+        </div>  
+      <div class="form-group row">
+        <label for="ppaHistoryID" class="col-sm-2 col-form-label">PPA ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ppaHistoryID" placeholder="PPA ID">
+        </div>
+      </div>
+      <button id="queryPPAHistory" type="submit" class="btn btn-success">Query PPA History</button>
+    </form>
+    <hr>
+    <div id="queryPPAHistoryResult">
+        <h4 class="display-5 text-center">Query Result</h4>
+        <table class="table table-striped table-sm">
+          <thead>
+             <tr>
+               <th scope="col">LastModificationOn</th>
+               <th scope="col">IsSigned</th>
+               <!-- <th scope="col">Amount</th>
+               <th scope="col">CanBeUsed</th> -->
+               <!-- <th scope="col">Name</th> -->
+               <!-- <th scope="col">Owner</th>
+               <th scope="col">Previous Owner Type</th>
+               <th scope="col">Current Owner Type</th>
+               <th scope="col">Eqipment Created Date</th>
+               <th scope="col">Last Updated Date</th> -->
+             </tr>
+           </thead>
+           <tbody id="ppaHistoryTableTbody">
+          </tbody>
+        </table>
+    </div>
+    <div id="queryPPAHistoryResultEmpty">
+        <h3 class="display-4 text-center">Not record found</h3>
+    </div>
+  </div>
+
+
+</div>
+<div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/images/wait.gif' width="64" height="64" /><br>Loading..</div>
+</body>
+</html>
+
+

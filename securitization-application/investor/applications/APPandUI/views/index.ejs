@@ -1,0 +1,458 @@
+
+<!--O'Reilly - Accelerated Hands-on Smart Contract Development with Hyperledger Fabric V2
+ # farma ledger supply chain network
+ # Author: Brian Wu
+ # load application page
+-->
+<html>
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Securitization</title>
+    <!--Import Google Icon Font-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+    <link type="text/css" href="/css/style.css" rel="stylesheet">
+    <script src="/js/plnClient.js"></script>
+  </head>
+<body>
+  <nav class="navbar navbar-light navbar-light" style="background-color: #343a40;margin-top: -3px;">
+    <span class="navbar-brand text-white">User Interface for Securitization</span>
+  </nav>
+  <nav class="navbar navbar-default" role="navigation">
+	<div class="container">
+		<div id="sidebar-wrapper" class="sidebar-toggle">
+		    <ul class="sidebar-nav">
+          <li id="enrollUserLink" class="nav-menu">
+            <a id="menu1" href="#enrollUser"><i class="fa fa-user menuIcon"></i>Enroll User</a>
+          </li>
+          <li id="transferCouponsLink" class="nav-menu">
+            <a id="menu2" href="#transferCoupons"><i class="fa fa-university menuIcon"></i>Redeem Coupons</a>
+          </li>
+          <li id="createOrderLink" class="nav-menu">
+            <a id="menu2" href="#createOrder"><i class="fa fa-university menuIcon"></i>CreateOrder</a>
+          </li>
+          <li id="createMarketOrderLink" class="nav-menu">
+            <a id="menu2" href="#createMarketOrder"><i class="fa fa-university menuIcon"></i>CreateMarketOrder</a>
+          </li>
+		    	<li id="poolAssetsLink" class="nav-menu">
+            <a id="menu2" href="#poolAssets"><i class="fa fa-university menuIcon"></i>PoolAssets</a>
+          </li>
+		    	<li id="queryBondsLink" class="nav-menu">
+		           <a id="menu3" href="#queryBonds"><i class="fa fa-search menuIcon"></i>QueryBonds</a>
+		    	</li>
+		    	<li id="querySecuritizationCoinsLink" class="nav-menu">
+            <a id="menu3" href="#querySecuritizationCoins"><i class="fa fa-search menuIcon"></i>QueryCoins</a>
+          </li>
+          <li id="queryBookOrderLink" class="nav-menu">
+            <a id="menu3" href="#queryBookOrder"><i class="fa fa-search menuIcon"></i>QueryOrderBook</a>
+          </li>
+          <li id="queryPPAHistoryLink" class="nav-menu">
+               <a id="menu3" href="#queryPPAHistory"><i class="fa fa fa-history menuIcon"></i>Query PPA History</a>
+          </li>
+		   </ul>
+		</div>
+  	</div>
+</nav>
+<!-- tab content -->
+<div class="tab-content page-content">
+  <!-- enrollUser --->
+  <div class="tab-pane text-style" id="enrollUserTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Enroll User</h4>
+    </div>
+      <form>
+        <div class="form-group row">
+          <label for="enrollmentUser" class="col-sm-2 col-form-label">Enrollment User</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentUser" placeholder="Enrollment User">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="enrollmentIdentity" class="col-sm-2 col-form-label">Enrollment Identity</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentIdentity" placeholder="Enrollment Identity">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="enrollmentSecret" class="col-sm-2 col-form-label">Enrollment Secret</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentSecret" placeholder="Enrollment Secret">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="enrollmentUserCIF" class="col-sm-2 col-form-label">User CIF</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentUserCIF" placeholder="User CIF">
+          </div>
+        </div>       
+        <div class="form-group row">
+          <label for="enrollmentUserEmail" class="col-sm-2 col-form-label">User Email</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="enrollmentUserEmail" placeholder="User Email">
+          </div>
+        </div>
+        <button type="submit" id="enrollUser" class="btn btn-success mb-2">Enroll</button>
+      </form>
+      <hr>
+  </div>
+
+
+  <!-- createMarketOrder --->
+  <div class="tab-pane text-style" id="createMarketOrderTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Create Market Order</h4>
+    </div>
+      <form>
+        <div class="form-group row">
+          <label for="userMarketID" class="col-sm-2 col-form-label">Identity Label</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="userMarketID" placeholder="userID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="orderMarketType" class="col-sm-2 col-form-label">Order Type</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="orderMarketType" placeholder="orderType">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="orderMarketAmount" class="col-sm-2 col-form-label">Order Amount</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argMarketAmount" placeholder="orderAmount">
+          </div>
+        </div>     
+        <div class="form-group row">
+          <label for="orderMarketID" class="col-sm-2 col-form-label">Token/Bond ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argMarketID" placeholder="orderID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="marketidentificativo" class="col-sm-2 col-form-label">Token/Bond identificativo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argMarketTypeID" placeholder="identificativo">
+          </div>
+        </div>
+        <button type="submit" id="createMarketOrder" class="btn btn-success mb-2">Submit</button>
+      </form>
+      <hr>
+  </div>
+    
+
+
+
+
+  <!-- createOrder --->
+  <div class="tab-pane text-style" id="createOrderTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Create Order</h4>
+    </div>
+      <form>
+        <div class="form-group row">
+          <label for="userID" class="col-sm-2 col-form-label">Identity Label</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="userID" placeholder="userID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="orderType" class="col-sm-2 col-form-label">Order Type</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="orderType" placeholder="orderType">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="orderAmount" class="col-sm-2 col-form-label">Order Amount</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argAmount" placeholder="orderAmount">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="orderPrice" class="col-sm-2 col-form-label">Order Price</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argPrice" placeholder="orderPrice">
+          </div>
+        </div>       
+        <div class="form-group row">
+          <label for="orderID" class="col-sm-2 col-form-label">Token/Bond ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argID" placeholder="orderID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="identificativo" class="col-sm-2 col-form-label">Token/Bond identificativo</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="argTypeID" placeholder="identificativo">
+          </div>
+        </div>
+        <button type="submit" id="createOrder" class="btn btn-success mb-2">Submit</button>
+      </form>
+      <hr>
+  </div>
+   
+  <!-- poolAssets --->
+  <div class="tab-pane text-style" id="poolAssetsTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Pool Assets </h4>
+    </div>
+  <form>
+      <div class="form-group row">
+        <label for="poolUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="poolUser" placeholder="username">
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="poolAssetType" class="col-sm-2 col-form-label">Asset Type</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="poolAssetType" placeholder=" Money/Bond">
+        </div>
+      </div>
+    <button id="poolAssets"  type="submit" class="btn btn-success">Submit</button>
+  </form>
+  <hr>
+  </div>
+
+  <!-- queryBonds --->
+  <div class="tab-pane text-style" id="queryBondsTab">
+      <div class="alert alert-primary" role="alert">
+          <h4>Query Bonds</h4>
+      </div>
+      <form>
+        <div class="form-group">
+      <input type="text" class="form-control" id="bondUser" placeholder="Enter username">
+        </div>
+        <button id="queryBonds" type="submit" class="btn btn-success">Query Bonds</button>
+    </form>
+      <hr>
+      <div id="queryBondResult">
+          <h4 class="display-5 text-center">Query Result</h4>
+          <table class="table table-striped table-sm">
+            <thead>
+               <tr>
+                 <th scope="col">ID</th>
+                 <th scope="col">TypeID</th>
+                 <th scope="col">Amount</th>
+                 <th scope="col">CanBeUsed</th>
+                 <!-- <th scope="col">Name</th> -->
+                 <!-- <th scope="col">Owner</th>
+                 <th scope="col">Previous Owner Type</th>
+                 <th scope="col">Current Owner Type</th>
+                 <th scope="col">Eqipment Created Date</th>
+                 <th scope="col">Last Updated Date</th> -->
+               </tr>
+             </thead>
+             <tbody id="tableBondbody">
+            </tbody>
+          </table>
+      </div>
+      <div id="queryBondResultEmpty">
+          <h3 class="display-4 text-center">Not record found</h3>
+      </div>
+  </div>
+
+
+  <!-- querySecuritizationCoins --->
+  <div class="tab-pane text-style" id="querySecuritizationCoinsTab">
+      <div class="alert alert-primary" role="alert">
+          <h4>Query Coins</h4>
+      </div>
+      <form>
+        <div class="form-group">
+      <input type="text" class="form-control" id="coinUser" placeholder="Enter userName">
+        </div>
+        <button id="querySecuritizationCoins" type="submit" class="btn btn-success">Query Coins</button>
+    </form>
+      <hr>
+      <div id="queryCoinResult">
+          <h4 class="display-5 text-center">Query Result</h4>
+          <table class="table table-striped table-sm">
+            <thead>
+               <tr>
+                 <th scope="col">ID</th>
+                 <th scope="col">TypeID</th>
+                 <th scope="col">Amount</th>
+                 <th scope="col">CanBeUsed</th>
+                 <!-- <th scope="col">Name</th> -->
+                 <!-- <th scope="col">Owner</th>
+                 <th scope="col">Previous Owner Type</th>
+                 <th scope="col">Current Owner Type</th>
+                 <th scope="col">Eqipment Created Date</th>
+                 <th scope="col">Last Updated Date</th> -->
+               </tr>
+             </thead>
+             <tbody id="tableCoinbody">
+            </tbody>
+          </table>
+      </div>
+      <div id="queryCoinResultEmpty">
+          <h3 class="display-4 text-center">Not record found</h3>
+      </div>
+  </div>
+
+
+
+  <!-- queryPPAHistory --->
+  <div class="tab-pane text-style" id="queryPPAHistoryTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Query PPA History</h4>
+    </div>
+    <form>
+      <div class="form-group row">
+        <label for="ppaHistoryUser" class="col-sm-2 col-form-label">Identity Label</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ppaHistoryUser" placeholder="identityLabel">
+          </div>
+        </div>
+      <div class="form-group row">
+        <label for="ppaHistoryUserDNI" class="col-sm-2 col-form-label">Irrigator ID</label>
+        <div class="col-sm-10">
+            <input type="text" class="form-control" id="ppaHistoryUserDNI" placeholder="userDNI">
+          </div>
+        </div>  
+      <div class="form-group row">
+        <label for="ppaHistoryID" class="col-sm-2 col-form-label">PPA ID</label>
+        <div class="col-sm-10">
+          <input type="text" class="form-control" id="ppaHistoryID" placeholder="PPA ID">
+        </div>
+      </div>
+      <button id="queryPPAHistory" type="submit" class="btn btn-success">Query PPA History</button>
+    </form>
+    <hr>
+    <div id="queryPPAHistoryResult">
+        <h4 class="display-5 text-center">Query Result</h4>
+        <table class="table table-striped table-sm">
+          <thead>
+             <tr>
+               <th scope="col">LastModificationOn</th>
+               <th scope="col">IsSigned</th>
+               <!-- <th scope="col">Amount</th>
+               <th scope="col">CanBeUsed</th> -->
+               <!-- <th scope="col">Name</th> -->
+               <!-- <th scope="col">Owner</th>
+               <th scope="col">Previous Owner Type</th>
+               <th scope="col">Current Owner Type</th>
+               <th scope="col">Eqipment Created Date</th>
+               <th scope="col">Last Updated Date</th> -->
+             </tr>
+           </thead>
+           <tbody id="ppaHistoryTableTbody">
+          </tbody>
+        </table>
+    </div>
+    <div id="queryPPAHistoryResultEmpty">
+        <h3 class="display-4 text-center">Not record found</h3>
+    </div>
+  </div>
+
+  <!-- transferCoupons --->
+  <div class="tab-pane text-style" id="transferCouponsTab">
+    <div class="alert alert-primary" role="alert">
+        <h4>Redeem Coupons</h4>
+    </div>
+      <form>
+        <div class="form-group row">
+          <label for="userTransferCoupons" class="col-sm-2 col-form-label">Identity Label</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="userTransferCoupons" placeholder="identityLabel">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="bondTransfertypeID" class="col-sm-2 col-form-label">Bond Type ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="bondTransfertypeID" placeholder="typeID">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="bondTransferTokenID" class="col-sm-2 col-form-label">Bond Token ID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="bondTransferTokenID" placeholder="bondTokenID">
+          </div>
+        </div>     
+        <div class="form-group row">
+          <label for="spvID" class="col-sm-2 col-form-label">spvID</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="spvID" placeholder="spvID">
+          </div>
+        </div>
+        <button type="submit" id="transferCoupons" class="btn btn-success mb-2">Submit</button>
+      </form>
+      <hr>
+  </div>
+  
+
+  <!-- query orderbook --->
+  <div class="tab-pane text-style" id="queryBookOrderTab">
+        <div class="alert alert-primary" role="alert">
+           <h4>Query Order Book</h4>
+        </div>
+       <form>
+         <div class="form-group">
+        <input type="text" class="form-control" id="bookUser" placeholder="Enter username">
+         </div>
+         <button id="queryBookOrder" type="submit" class="btn btn-success">Query Order Book</button>
+      </form>
+       <hr>
+       <div id="queryBookResult">
+           <h4 class="display-5 text-center">Query Book Result</h4>
+           <table id="bookTable" class="table table-striped table-sm">
+             <thead>
+              <tr>
+                <th scope="col">Ask</th>
+              </tr>
+               <tr>
+                 <th scope="col">Quantity</th>
+                 <th scope="col">Price</th>
+                 <th scope="col">Time</th>
+                 <th scope="col">Name</th>
+                 <!-- <th scope="col">Owner</th>
+                 <th scope="col">Previous Owner Type</th>
+                 <th scope="col">Current Owner Type</th>
+                 <th scope="col">Eqipment Created Date</th>
+                 <th scope="col">Last Updated Date</th> -->
+               </tr>
+             </thead>
+             <tbody id="tableBidbody">
+
+             </tbody>
+             <thead>
+               <tr>
+                 <th scope="col">Bid</th>
+               </tr>
+               <tr>
+                <th scope="col">Quantity</th>
+                <th scope="col">Price</th>
+                <th scope="col">Time</th>
+                <th scope="col">Name</th>
+               </tr>
+             </thead>
+             <tbody id="tableAskbody">
+             </tbody>
+             <thead>
+              <tr>
+                <th scope="col">MarketPrice</th>
+              </tr>
+              <tr>
+               <th scope="col">Price</th>
+              </tr>
+            </thead>
+            <tbody id="tableMarketPricebody">
+            </tbody>
+           </table>
+       </div>
+       <div id="queryBookResultEmpty">
+           <h3 class="display-4 text-center">Not record found</h3>
+       </div>
+    </div>
+</div>
+<div id="wait" style="display:none;width:69px;height:89px;border:1px solid black;position:absolute;top:50%;left:50%;padding:2px;"><img src='/images/wait.gif' width="64" height="64" /><br>Loading..</div>
+</body>
+</html>
+
+

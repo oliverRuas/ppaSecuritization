@@ -1,0 +1,270 @@
+{
+    "name": "securitization-network-originator",
+    "version": "1.0.0",
+    "client": {
+        "tlsEnable": false,
+        "organization": "${ORGANIZATION}",
+        "connection": {
+            "timeout": {
+                "peer": {
+                    "endorser": "300"
+                },
+                "orderer": "300"
+            }
+        }
+    },
+    "channels": {
+        "securitization": {
+            "peers": {
+                "peer.originator.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.farmer.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.ratingagency.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.spv.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                },
+                "peer.investor.securitization.com": {
+                    "endorsingPeer": true,
+                    "chaincodeQuery": true,
+                    "ledgerQuery": true,
+                    "eventSource": true
+                }
+            }
+        }
+    },
+    "organizations": {
+        "originator": {
+            "mspid": "originatorMSP",
+            "peers": [
+                "peer.originator.securitization.com"
+            ],
+            "orderers": [
+                "orderer.originator.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.originator.securitization.com"
+            ]
+        },
+        "farmer": {
+            "mspid": "farmerMSP",
+            "peers": [
+                "peer.farmer.securitization.com"
+            ],
+            "orderers": [
+                "orderer.farmer.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.farmer.securitization.com"
+            ]
+        },
+        "ratingagency": {
+            "mspid": "ratingagencyMSP",
+            "peers": [
+                "peer.ratingagency.securitization.com"
+            ],
+            "orderers": [
+                "orderer.ratingagency.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.ratingagency.securitization.com"
+            ]
+        },
+        "spv": {
+            "mspid": "spvMSP",
+            "peers": [
+                "peer.spv.securitization.com"
+            ],
+            "orderers": [
+                "orderer.spv.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.spv.securitization.com"
+            ]
+        },
+        "investor": {
+            "mspid": "investorMSP",
+            "peers": [
+                "peer.investor.securitization.com"
+            ],
+            "orderers": [
+                "orderer.investor.securitization.com"
+            ],
+            "certificateAuthorities": [
+                "rootca.investor.securitization.com"
+            ]
+        }
+    },
+    "peers": {
+        "peer.originator.securitization.com": {
+            "url": "grpcs://localhost:7051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICfjCCAiWgAwIBAgIUS6mNcuLAZmGJlqbmMZth2Jy59n0wCgYIKoZIzj0EAwIw\ngZsxCzAJBgNVBAYTAlNQMRUwEwYDVQQIEwxvcmlnaW5hdG9yU1QxFDASBgNVBAcT\nC29yaWdpbmF0b3JMMRMwEQYDVQQKEwpvcmlnaW5hdG9yMRswGQYDVQQLExJIeXBl\ncmxlZGdlciBGYWJyaWMxLTArBgNVBAMTJHRscy5jYS5vcmlnaW5hdG9yLnNlY3Vy\naXRpemF0aW9uLmNvbTAeFw0yMjA2MjQxODU3MDBaFw0zNzA2MjAxODU3MDBaMIGb\nMQswCQYDVQQGEwJTUDEVMBMGA1UECBMMb3JpZ2luYXRvclNUMRQwEgYDVQQHEwtv\ncmlnaW5hdG9yTDETMBEGA1UEChMKb3JpZ2luYXRvcjEbMBkGA1UECxMSSHlwZXJs\nZWRnZXIgRmFicmljMS0wKwYDVQQDEyR0bHMuY2Eub3JpZ2luYXRvci5zZWN1cml0\naXphdGlvbi5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARzWxNWZj2PWh2R\nxTnlN41UvX5SSUsNgUsR8CThQTnUE26jFVcQw29N9kqqVYR1yzcY1OUNMCu5s5yE\ngcPLEbsVo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUQpMvLfi0kPm7aAkEx0PWhwFcQZkwCgYIKoZIzj0EAwIDRwAwRAIg\nOEVy3pxiz4DZd9Ol4hiL9Z40qN3on1AhyZyDD+6sfWECIDjWiO2VrUCeeJR8AboC\nfa3FV7mTzpRepauw0zvitgJr\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.originator.securitization.com",
+                "hostnameOverride": "peer.originator.securitization.com"
+            }
+        },
+        "peer.farmer.securitization.com": {
+            "url": "grpcs://localhost:8051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICXjCCAgWgAwIBAgIUbc6yE1STRyNH/WsbNc0UCJyHzgQwCgYIKoZIzj0EAwIw\ngYsxCzAJBgNVBAYTAlNQMREwDwYDVQQIEwhmYXJtZXJTVDEQMA4GA1UEBxMHZmFy\nbWVyTDEPMA0GA1UEChMGZmFybWVyMRswGQYDVQQLExJIeXBlcmxlZGdlciBGYWJy\naWMxKTAnBgNVBAMTIHRscy5jYS5mYXJtZXIuc2VjdXJpdGl6YXRpb24uY29tMB4X\nDTIyMDYyNDE4NTcwMFoXDTM3MDYyMDE4NTcwMFowgYsxCzAJBgNVBAYTAlNQMREw\nDwYDVQQIEwhmYXJtZXJTVDEQMA4GA1UEBxMHZmFybWVyTDEPMA0GA1UEChMGZmFy\nbWVyMRswGQYDVQQLExJIeXBlcmxlZGdlciBGYWJyaWMxKTAnBgNVBAMTIHRscy5j\nYS5mYXJtZXIuc2VjdXJpdGl6YXRpb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAE6XJaIuCS1muofEJChFiBuHRSJHxtPUj1fJ6EhTqmnej7P4lFFxmd3pvs\n0FAnOr2yHWFntuRGSHY2C+i5GX10caNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1Ud\nEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFClvlP7Nm31VjV1k+bVpUcbNMqOLMAoG\nCCqGSM49BAMCA0cAMEQCIEb1VbAQs3bjxCiUetgE8M8lIWPnRUXdFcUR4rY329I+\nAiAW4ixbF6MHDhDqOd8DcQBMdgMPE0bnYfaXYMjHBkXavg==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.farmer.securitization.com",
+                "hostnameOverride": "peer.farmer.securitization.com"
+            }
+        },
+        "peer.ratingagency.securitization.com": {
+            "url": "grpcs://localhost:9051",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICjzCCAjWgAwIBAgIUWK5BuTj6DciZ7/LSAQ6LZy+COg0wCgYIKoZIzj0EAwIw\ngaMxCzAJBgNVBAYTAlNQMRcwFQYDVQQIEw5yYXRpbmdhZ2VuY3lTVDEWMBQGA1UE\nBxMNcmF0aW5nYWdlbmN5TDEVMBMGA1UEChMMcmF0aW5nYWdlbmN5MRswGQYDVQQL\nExJIeXBlcmxlZGdlciBGYWJyaWMxLzAtBgNVBAMTJnRscy5jYS5yYXRpbmdhZ2Vu\nY3kuc2VjdXJpdGl6YXRpb24uY29tMB4XDTIyMDYyNDE4NTcwMFoXDTM3MDYyMDE4\nNTcwMFowgaMxCzAJBgNVBAYTAlNQMRcwFQYDVQQIEw5yYXRpbmdhZ2VuY3lTVDEW\nMBQGA1UEBxMNcmF0aW5nYWdlbmN5TDEVMBMGA1UEChMMcmF0aW5nYWdlbmN5MRsw\nGQYDVQQLExJIeXBlcmxlZGdlciBGYWJyaWMxLzAtBgNVBAMTJnRscy5jYS5yYXRp\nbmdhZ2VuY3kuc2VjdXJpdGl6YXRpb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEk/YELX/PM1fg7HGcu5HhwMpETNgs/njvnP/cPA4lEnS8W7iGF1Nj8r/+\noCPoSsvd4Nms50dw1W3oiNOTXfvwOKNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1Ud\nEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFMBCE9biTwfz2bhBlV0TMolVEvWhMAoG\nCCqGSM49BAMCA0gAMEUCIQDyqvn2oGPwH0OdPYSsf24rnkLa82XZOSChY20CiUxp\nLwIgV/wnmo8ZhhNGBeZiabP/7YFozkO0bZmOLVkhB8MUVgw=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.ratingagency.securitization.com",
+                "hostnameOverride": "peer.ratingagency.securitization.com"
+            }
+        },
+        "peer.spv.securitization.com": {
+            "url": "grpcs://localhost:10051",
+            "tlsCACerts": {
+                "pem": "${PEER4PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.spv.securitization.com",
+                "hostnameOverride": "peer.spv.securitization.com"
+            }
+        },
+        "peer.investor.securitization.com": {
+            "url": "grpcs://localhost:11051",
+            "tlsCACerts": {
+                "pem": "${PEER5PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "peer.investor.securitization.com",
+                "hostnameOverride": "peer.investor.securitization.com"
+            }
+        }
+    },
+    "orderers": {
+        "orderer.originator.securitization.com": {
+            "url": "grpcs://localhost:7050",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICfjCCAiWgAwIBAgIUS6mNcuLAZmGJlqbmMZth2Jy59n0wCgYIKoZIzj0EAwIw\ngZsxCzAJBgNVBAYTAlNQMRUwEwYDVQQIEwxvcmlnaW5hdG9yU1QxFDASBgNVBAcT\nC29yaWdpbmF0b3JMMRMwEQYDVQQKEwpvcmlnaW5hdG9yMRswGQYDVQQLExJIeXBl\ncmxlZGdlciBGYWJyaWMxLTArBgNVBAMTJHRscy5jYS5vcmlnaW5hdG9yLnNlY3Vy\naXRpemF0aW9uLmNvbTAeFw0yMjA2MjQxODU3MDBaFw0zNzA2MjAxODU3MDBaMIGb\nMQswCQYDVQQGEwJTUDEVMBMGA1UECBMMb3JpZ2luYXRvclNUMRQwEgYDVQQHEwtv\ncmlnaW5hdG9yTDETMBEGA1UEChMKb3JpZ2luYXRvcjEbMBkGA1UECxMSSHlwZXJs\nZWRnZXIgRmFicmljMS0wKwYDVQQDEyR0bHMuY2Eub3JpZ2luYXRvci5zZWN1cml0\naXphdGlvbi5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAARzWxNWZj2PWh2R\nxTnlN41UvX5SSUsNgUsR8CThQTnUE26jFVcQw29N9kqqVYR1yzcY1OUNMCu5s5yE\ngcPLEbsVo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUQpMvLfi0kPm7aAkEx0PWhwFcQZkwCgYIKoZIzj0EAwIDRwAwRAIg\nOEVy3pxiz4DZd9Ol4hiL9Z40qN3on1AhyZyDD+6sfWECIDjWiO2VrUCeeJR8AboC\nfa3FV7mTzpRepauw0zvitgJr\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.originator.securitization.com",
+                "hostnameOverride": "orderer.originator.securitization.com"
+            }
+        },
+        "orderer.farmer.securitization.com": {
+            "url": "grpcs://localhost:8050",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICXjCCAgWgAwIBAgIUbc6yE1STRyNH/WsbNc0UCJyHzgQwCgYIKoZIzj0EAwIw\ngYsxCzAJBgNVBAYTAlNQMREwDwYDVQQIEwhmYXJtZXJTVDEQMA4GA1UEBxMHZmFy\nbWVyTDEPMA0GA1UEChMGZmFybWVyMRswGQYDVQQLExJIeXBlcmxlZGdlciBGYWJy\naWMxKTAnBgNVBAMTIHRscy5jYS5mYXJtZXIuc2VjdXJpdGl6YXRpb24uY29tMB4X\nDTIyMDYyNDE4NTcwMFoXDTM3MDYyMDE4NTcwMFowgYsxCzAJBgNVBAYTAlNQMREw\nDwYDVQQIEwhmYXJtZXJTVDEQMA4GA1UEBxMHZmFybWVyTDEPMA0GA1UEChMGZmFy\nbWVyMRswGQYDVQQLExJIeXBlcmxlZGdlciBGYWJyaWMxKTAnBgNVBAMTIHRscy5j\nYS5mYXJtZXIuc2VjdXJpdGl6YXRpb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAE6XJaIuCS1muofEJChFiBuHRSJHxtPUj1fJ6EhTqmnej7P4lFFxmd3pvs\n0FAnOr2yHWFntuRGSHY2C+i5GX10caNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1Ud\nEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFClvlP7Nm31VjV1k+bVpUcbNMqOLMAoG\nCCqGSM49BAMCA0cAMEQCIEb1VbAQs3bjxCiUetgE8M8lIWPnRUXdFcUR4rY329I+\nAiAW4ixbF6MHDhDqOd8DcQBMdgMPE0bnYfaXYMjHBkXavg==\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.farmer.securitization.com",
+                "hostnameOverride": "orderer.farmer.securitization.com"
+            }
+        },
+        "orderer.ratingagency.securitization.com": {
+            "url": "grpcs://localhost:9050",
+            "tlsCACerts": {
+                "pem": "-----BEGIN CERTIFICATE-----\nMIICjzCCAjWgAwIBAgIUWK5BuTj6DciZ7/LSAQ6LZy+COg0wCgYIKoZIzj0EAwIw\ngaMxCzAJBgNVBAYTAlNQMRcwFQYDVQQIEw5yYXRpbmdhZ2VuY3lTVDEWMBQGA1UE\nBxMNcmF0aW5nYWdlbmN5TDEVMBMGA1UEChMMcmF0aW5nYWdlbmN5MRswGQYDVQQL\nExJIeXBlcmxlZGdlciBGYWJyaWMxLzAtBgNVBAMTJnRscy5jYS5yYXRpbmdhZ2Vu\nY3kuc2VjdXJpdGl6YXRpb24uY29tMB4XDTIyMDYyNDE4NTcwMFoXDTM3MDYyMDE4\nNTcwMFowgaMxCzAJBgNVBAYTAlNQMRcwFQYDVQQIEw5yYXRpbmdhZ2VuY3lTVDEW\nMBQGA1UEBxMNcmF0aW5nYWdlbmN5TDEVMBMGA1UEChMMcmF0aW5nYWdlbmN5MRsw\nGQYDVQQLExJIeXBlcmxlZGdlciBGYWJyaWMxLzAtBgNVBAMTJnRscy5jYS5yYXRp\nbmdhZ2VuY3kuc2VjdXJpdGl6YXRpb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAEk/YELX/PM1fg7HGcu5HhwMpETNgs/njvnP/cPA4lEnS8W7iGF1Nj8r/+\noCPoSsvd4Nms50dw1W3oiNOTXfvwOKNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1Ud\nEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFMBCE9biTwfz2bhBlV0TMolVEvWhMAoG\nCCqGSM49BAMCA0gAMEUCIQDyqvn2oGPwH0OdPYSsf24rnkLa82XZOSChY20CiUxp\nLwIgV/wnmo8ZhhNGBeZiabP/7YFozkO0bZmOLVkhB8MUVgw=\n-----END CERTIFICATE-----\n"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.ratingagency.securitization.com",
+                "hostnameOverride": "orderer.ratingagency.securitization.com"
+            }
+        },
+        "orderer.spv.securitization.com": {
+            "url": "grpcs://localhost:10050",
+            "tlsCACerts": {
+                "pem": "${ORDERER4PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.spv.securitization.com",
+                "hostnameOverride": "orderer.spv.securitization.com"
+            }
+        },
+        "orderer.investor.securitization.com": {
+            "url": "grpcs://localhost:11050",
+            "tlsCACerts": {
+                "pem": "${ORDERER5PEM}"
+            },
+            "grpcOptions": {
+                "ssl-target-name-override": "orderer.investor.securitization.com",
+                "hostnameOverride": "orderer.investor.securitization.com"
+            }
+        }
+    },
+    "certificateAuthorities": {
+        "rootca.originator.securitization.com": {
+            "url": "https://localhost:7055",
+            "caName": "rootca.originator.securitization.com",
+            "tlsCACerts": {
+                "pem": ["-----BEGIN CERTIFICATE-----\nMIICfzCCAiWgAwIBAgIUaGx/N0qQosxARCHC9KsuPBqWRsUwCgYIKoZIzj0EAwIw\ngZsxCzAJBgNVBAYTAlNQMRUwEwYDVQQIEwxvcmlnaW5hdG9yU1QxFDASBgNVBAcT\nC29yaWdpbmF0b3JMMRMwEQYDVQQKEwpvcmlnaW5hdG9yMRswGQYDVQQLExJIeXBl\ncmxlZGdlciBGYWJyaWMxLTArBgNVBAMTJHJvb3RjYS5vcmlnaW5hdG9yLnNlY3Vy\naXRpemF0aW9uLmNvbTAeFw0yMjA2MjQxODU4MDBaFw0zNzA2MjAxODU4MDBaMIGb\nMQswCQYDVQQGEwJTUDEVMBMGA1UECBMMb3JpZ2luYXRvclNUMRQwEgYDVQQHEwtv\ncmlnaW5hdG9yTDETMBEGA1UEChMKb3JpZ2luYXRvcjEbMBkGA1UECxMSSHlwZXJs\nZWRnZXIgRmFicmljMS0wKwYDVQQDEyRyb290Y2Eub3JpZ2luYXRvci5zZWN1cml0\naXphdGlvbi5jb20wWTATBgcqhkjOPQIBBggqhkjOPQMBBwNCAAQ/MfAgH+0Z3zwi\nvwB0TodAinmt/hH0t4ftEK9M8IJrCdrb+2DFoeg55Z6Wi5z4J5EhUo4rtC9TCjGw\nGx5uMrejo0UwQzAOBgNVHQ8BAf8EBAMCAQYwEgYDVR0TAQH/BAgwBgEB/wIBATAd\nBgNVHQ4EFgQUDDHuuHf7rnKnXpIXhZoezkmFMi4wCgYIKoZIzj0EAwIDSAAwRQIh\nAOWlXqHD95UXSWMaS4O4D1FD19WJe3A+CsF1LGvQyh8rAiB/f0Ke7R7Ucf8JxURv\nl3/wkdYxI0bv1MxbICjUcouE+w==\n-----END CERTIFICATE-----\n"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.farmer.securitization.com": {
+            "url": "https://localhost:8055",
+            "caName": "rootca.farmer.securitization.com",
+            "tlsCACerts": {
+                "pem": ["-----BEGIN CERTIFICATE-----\nMIICXzCCAgWgAwIBAgIUYiY3agL7cwqFNLwJ/Kf7zFY/pSswCgYIKoZIzj0EAwIw\ngYsxCzAJBgNVBAYTAlNQMREwDwYDVQQIEwhGYXJtZXJTVDEQMA4GA1UEBxMHRmFy\nbWVyTDEPMA0GA1UEChMGRmFybWVyMRswGQYDVQQLExJIeXBlcmxlZGdlciBGYWJy\naWMxKTAnBgNVBAMTIHJvb3RjYS5mYXJtZXIuc2VjdXJpdGl6YXRpb24uY29tMB4X\nDTIyMDYyNDE4NTgwMFoXDTM3MDYyMDE4NTgwMFowgYsxCzAJBgNVBAYTAlNQMREw\nDwYDVQQIEwhGYXJtZXJTVDEQMA4GA1UEBxMHRmFybWVyTDEPMA0GA1UEChMGRmFy\nbWVyMRswGQYDVQQLExJIeXBlcmxlZGdlciBGYWJyaWMxKTAnBgNVBAMTIHJvb3Rj\nYS5mYXJtZXIuc2VjdXJpdGl6YXRpb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAETWMSxquOWKjXP6NFHCF8FZWQ1GbvbW8QcOBAYW8OfHsrrRNJ1yFWjIm6\nxo1IG2N4ucKJYp7jo2Y6idVzox74F6NFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1Ud\nEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFMoj2yQHCStz4Cye9vj+4oSlOz9LMAoG\nCCqGSM49BAMCA0gAMEUCIQDv+MVci5iMiRHKb4AAb/wReOv+2E4waEK+1zviBF1P\n+gIgJt1LkCXuudmi1Slsy7g1RxR8o6gZo23bsIyPtQXV71E=\n-----END CERTIFICATE-----\n"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.ratingagency.securitization.com": {
+            "url": "https://localhost:9055",
+            "caName": "rootca.ratingagency.securitization.com",
+            "tlsCACerts": {
+                "pem": ["-----BEGIN CERTIFICATE-----\nMIICjzCCAjWgAwIBAgIUZi8YId3kYF1A+PP8HJ0+58I71pgwCgYIKoZIzj0EAwIw\ngaMxCzAJBgNVBAYTAlNQMRcwFQYDVQQIEw5yYXRpbmdhZ2VuY3lTVDEWMBQGA1UE\nBxMNcmF0aW5nYWdlbmN5TDEVMBMGA1UEChMMcmF0aW5nYWdlbmN5MRswGQYDVQQL\nExJIeXBlcmxlZGdlciBGYWJyaWMxLzAtBgNVBAMTJnJvb3RjYS5yYXRpbmdhZ2Vu\nY3kuc2VjdXJpdGl6YXRpb24uY29tMB4XDTIyMDYyNDE4NTgwMFoXDTM3MDYyMDE4\nNTgwMFowgaMxCzAJBgNVBAYTAlNQMRcwFQYDVQQIEw5yYXRpbmdhZ2VuY3lTVDEW\nMBQGA1UEBxMNcmF0aW5nYWdlbmN5TDEVMBMGA1UEChMMcmF0aW5nYWdlbmN5MRsw\nGQYDVQQLExJIeXBlcmxlZGdlciBGYWJyaWMxLzAtBgNVBAMTJnJvb3RjYS5yYXRp\nbmdhZ2VuY3kuc2VjdXJpdGl6YXRpb24uY29tMFkwEwYHKoZIzj0CAQYIKoZIzj0D\nAQcDQgAE+A20xP2xVVVrqK7aaxWTSPcWAPMYeUuOfysk196JUx8pXSuunsHd+ipB\n92do6Q5lUzHI3wt0OjS2/pzoRwT6UKNFMEMwDgYDVR0PAQH/BAQDAgEGMBIGA1Ud\nEwEB/wQIMAYBAf8CAQEwHQYDVR0OBBYEFNoG0bNf9IFtv7eBfjcc/s+vDH/SMAoG\nCCqGSM49BAMCA0gAMEUCIQCBFK9EURCU1twOpP/+YPLY7naJK6OcRIKJkLNypxx4\nxgIgPe0jfDb/OJZTOx9rhMXOGfoRg3+gMLTK833v1cK/Zvg=\n-----END CERTIFICATE-----\n"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.spv.securitization.com": {
+            "url": "https://localhost:10055",
+            "caName": "rootca.spv.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA4PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        },
+        "rootca.investor.securitization.com": {
+            "url": "https://localhost:11055",
+            "caName": "rootca.investor.securitization.com",
+            "tlsCACerts": {
+                "pem": ["${CA5PEM}"]
+            },
+            "httpOptions": {
+                "verify": false
+            }
+        }
+    }
+}
